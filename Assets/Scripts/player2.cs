@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class player1 : MonoBehaviour {
+public class player2 : MonoBehaviour {
 	public float velocidad = 5f;
 	public float salto = 10f;
 	public float power =1f;
@@ -12,32 +12,32 @@ public class player1 : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetKey ("right")) {
+		if (Input.GetKey (KeyCode.D)) {
 			rb.velocity = new Vector2 (velocidad * power, rb.velocity.y);
 			transform.localScale = new Vector3(1, 1, 1);
 		}
-		if (Input.GetKeyUp ("right")) {
+		if (Input.GetKeyUp (KeyCode.D)) {
 			rb.velocity = new Vector2 (0 , rb.velocity.y);
 		}
-		if (Input.GetKey ("left")) {
+		if (Input.GetKey (KeyCode.A)) {
 			rb.velocity = new Vector2 (-velocidad * power, rb.velocity.y);
 			transform.localScale = new Vector3(-1, 1, 1);
 		}
-		if (Input.GetKeyUp ("left")) {
+		if (Input.GetKeyUp (KeyCode.A)) {
 			rb.velocity = new Vector2 (0 , rb.velocity.y);
 		}
-		if (Input.GetKey ("up")) {
+		if (Input.GetKey (KeyCode.W)) {
 			rb.velocity = new Vector2 (velocidad * power, rb.velocity.x);
 			transform.localScale = new Vector3(1, 1, 1);
 		}
-		if (Input.GetKeyUp ("up")) {
+		if (Input.GetKeyUp (KeyCode.W)) {
 			rb.velocity = new Vector2 (0 , rb.velocity.x);
 		}
-		if (Input.GetKey ("down")) {
+		if (Input.GetKey (KeyCode.S)) {
 			rb.velocity = new Vector2 (-velocidad * power, rb.velocity.x);
 			transform.localScale = new Vector3(-1, 1, 1);
 		}
-		if (Input.GetKeyUp ("down")) {
+		if (Input.GetKeyUp (KeyCode.S)) {
 			rb.velocity = new Vector2 (0 , rb.velocity.x);
 		}
 	}
